@@ -44,6 +44,7 @@ window.onunhandledrejection = function (event) {
   }
 
   logger.error(msg);
+  return false;
 };
 
 function load_script(src) {

@@ -152,6 +152,12 @@ async function post_jailbreak() {
   kview(sysent_661_addr).setBInt(8, sy_call, true);
   kview(sysent_661_addr).setUint32(0x2c, sy_thrcnt, true);
 
+  try {
+    cleanup();
+  } catch (cleanup_err) {
+    logger.error(`Unable to cleanup: ${cleanup_err}`);
+  }
+
   await load_bin();
 }
 
